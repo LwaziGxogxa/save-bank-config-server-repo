@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 8085
+
+accounts:
+  msg: "{cipher}66d8e0c52c7816b61e97b3dae7a029c1b8b946e42af4f1d3a03c361f4eb7ae79a9562ec40bd13331a1bdecb11d4ed87f21b64a8f74e028546e53ca5694f7e0cdf7db7f0875e8cd96dfdf3a73c853d446"
+  build-version: 1
+  mailDetails:
+    hostName: local-accounts@savebank.com
+    port: 8088
+    from: local-accounts@savebank.com
+    subject: Your accounts details from save bank local environment
+
+#    activeBranches: [East London,Nqamakwe,Cape Town]
+#    activeBranches[1]: Nqamakwe
+#    activeBranches[2]: Cape Town
+
+eureka:
+  instance:
+    client:
+      serverUrl:
+        defaultZone: http://localhost:8761/eureka/
+
+
+
